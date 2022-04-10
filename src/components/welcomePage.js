@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/welcome.css'
-import { Carousel, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 function WelcomePage() {
 
@@ -12,7 +12,7 @@ function WelcomePage() {
             document.getElementById("aaa").innerText = arr[i];
             document.getElementById("aaa").style.fontFamily = fonts[i];
             ++i;
-            if(i==6) i=0;
+            if(i===6) i=0;
         }, 2000);
     };
 
@@ -24,7 +24,7 @@ function WelcomePage() {
            </Col>
            {document.addEventListener('DOMContentLoaded',abc())}
            <Col className='col2' id="name" sm={6} xs={12}>
-                <h1 id="aaa"></h1>
+                <h1 id="aaa">_</h1>
            </Col>
        </Row>
 

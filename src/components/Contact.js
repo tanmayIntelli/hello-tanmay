@@ -12,7 +12,7 @@ function Contact() {
     const [info, setInfo] = useState('');
     const [loading, setLoading]=useState(false);
 
-    const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+    const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
     
     function handleChange(event){
         switch(event.target.name){
@@ -45,13 +45,13 @@ function Contact() {
     }
     
     function handleSubmit(event){
-        if(name==""||!(/^[A-Za-z\s]+$/.test(name))){
+        if(name===""||!(/^[A-Za-z\s]+$/.test(name))){
             setError("Hey no name? Are you Lord Voldemort?");
         }
-        else if(email==""||!validEmailRegex.test(email)){
+        else if(email===""||!validEmailRegex.test(email)){
             setError("Hey you missed entering correct email ID!")
         }
-        else if(msg==""){
+        else if(msg===""){
             setError("Yes silence is the best answer...but not in here!");
         }
         else{
@@ -72,14 +72,14 @@ function Contact() {
             <div className='contact'>
                 <div className='contact-card'>
                     <div className="contact-form">
-                    {error!=""?<h3>{error}</h3>:null}
+                    {error!==""?<h3>{error}</h3>:null}
                         <input type="text"  value={name} onChange={handleChange} name="name"  placeholder="Name" autoComplete="off" className="contact-field" id="form-name" required />
                         <input type="email"  value={email} onChange={handleChange} name="email" placeholder="Your E-mail ID" autoComplete="off" className="contact-field" id="form-email" required />
                         <input type="text"  value={msg} onChange={handleChange} name="message"placeholder="What do you want to say..." autoComplete="off" className="contact-field" id="form-message" required />
                         <button id="submit-btn" onClick={handleSubmit}>
                             {loading?<Spinner as="span" animation="border" size="sm" aria-hidden="true" />:<GrSend size="30px" />}
                         </button>
-                        {info!=""?<h3 id="information">{info}</h3> : null}
+                        {info!==""?<h3 id="information">{info}</h3> : null}
                     </div>
                 </div>
             </div>

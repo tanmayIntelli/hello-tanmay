@@ -20,7 +20,7 @@
   font-family: "Monoton", cursive;
   color: white;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 .col2 {
@@ -29,7 +29,7 @@
   background-color: yellow;
   display: flex;
   font-family: "Rubik Moonrocks", cursive;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   width: fit-content;
 }
